@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B.U.I.L.D. IT Apprenticeship Program | Long Island, NY</title>
+<meta name="description" content="B.U.I.L.D. IT: an apprenticeship program in Brokerage, Underwriting, Insurance and Investments, Lending, Development and Internet Technology. Mentorship, licensing support and scholarships. Melville, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16181d; --ink-2:#22262e; --steel:#3a404b; --amber:#f2a516; --amber-deep:#c97f00;
+  --paper:#f7f6f2; --line:#d9d6cc; --muted:#5d6270; --white:#ffffff;
+  --display:"Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --wrap:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1;margin:0;letter-spacing:.01em}
+h2{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:900}
+h3{font-size:clamp(2rem,4vw,2.8rem);font-weight:900}
+h4{font-size:1.35rem;font-weight:800}
+p{max-width:68ch}
+.stripe{height:14px;background:repeating-linear-gradient(-45deg,var(--amber) 0 18px,var(--ink) 18px 36px)}
+
+/* Header */
+.top{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--white);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{font-family:var(--display);font-weight:900;font-size:1.7rem;text-decoration:none;letter-spacing:.04em}
+.logo span{color:var(--amber)}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{text-decoration:none;font-weight:600;font-size:.95rem;opacity:.85}
+.nav a:hover{opacity:1}
+.btn{display:inline-block;background:var(--amber);color:var(--ink);font-weight:700;text-decoration:none;padding:12px 22px;border:2px solid var(--amber);border-radius:3px}
+.btn:hover{background:var(--amber-deep);border-color:var(--amber-deep)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.menu-toggle{display:none;background:none;border:2px solid var(--white);color:var(--white);padding:6px 12px;font-weight:700;border-radius:3px}
+@media (max-width:900px){
+  .menu-toggle{display:block}
+  .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:16px 24px 24px}
+  .nav.open{display:flex}
+}
+
+/* Hero */
+.hero{background:var(--ink);color:var(--white);padding:72px 0 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(3.4rem,8vw,6.2rem);font-weight:900}
+.hero .lead{font-size:1.2rem;color:#c9ccd4;margin:22px 0 30px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.beams{display:flex;flex-direction:column;gap:8px}
+.beam{display:flex;align-items:stretch;background:var(--ink-2);border-left:6px solid var(--amber);text-decoration:none;color:var(--white);transform:translateX(40px);opacity:0;animation:set .6s cubic-bezier(.2,.8,.2,1) forwards}
+.beam:hover{background:var(--steel)}
+.beam__letter{font-family:var(--display);font-weight:900;font-size:2.6rem;width:84px;display:flex;align-items:center;justify-content:center;background:var(--amber);color:var(--ink);flex-shrink:0}
+.beam__text{padding:10px 18px;display:flex;flex-direction:column;justify-content:center}
+.beam__name{font-family:var(--display);font-weight:800;font-size:1.45rem}
+.beam__desc{font-size:.9rem;color:#aeb2bc}
+.beam:nth-child(1){animation-delay:.05s}.beam:nth-child(2){animation-delay:.15s}.beam:nth-child(3){animation-delay:.25s}
+.beam:nth-child(4){animation-delay:.35s}.beam:nth-child(5){animation-delay:.45s}.beam:nth-child(6){animation-delay:.55s}
+@keyframes set{to{transform:none;opacity:1}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding:48px 0 64px}}
+
+/* Facts */
+.facts{background:var(--amber);color:var(--ink)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.fact{padding:26px 18px;border-right:2px solid rgba(22,24,29,.18)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--display);font-size:2.6rem;font-weight:900;line-height:1}
+.fact span{font-weight:600;font-size:.95rem}
+@media (max-width:760px){.facts .wrap{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:2px solid rgba(22,24,29,.18)}}
+
+/* Sections */
+section{padding:88px 0}
+.intro{margin:18px 0 44px;color:var(--muted);font-size:1.1rem}
+.track{border-top:3px solid var(--ink);padding:48px 0}
+.track:first-of-type{border-top:0;padding-top:0}
+.track__head{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start}
+.track__letter{font-family:var(--display);font-weight:900;font-size:6.5rem;line-height:.8;color:var(--amber-deep)}
+.track__head p{margin:14px 0 0}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:30px 0 0 148px}
+.col h4{border-bottom:2px solid var(--amber);padding-bottom:8px;margin-bottom:12px}
+.col ul{margin:0;padding-left:1.1em}
+.col li{margin-bottom:6px}
+.outcome{margin:26px 0 0 148px;padding:16px 20px;background:var(--white);border-left:5px solid var(--amber)}
+@media (max-width:900px){.track__head{grid-template-columns:1fr}.track__letter{font-size:4.5rem}.cols{grid-template-columns:1fr;margin-left:0}.outcome{margin-left:0}}
+
+/* Trades */
+.trades{background:var(--ink);color:var(--white)}
+.trades .intro{color:#c9ccd4}
+.trade-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:2px;background:var(--steel);border:2px solid var(--steel)}
+.trade{background:var(--ink-2);padding:18px;font-weight:600}
+.trade small{display:block;color:#aeb2bc;font-weight:400;font-size:.85rem;margin-top:4px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.step{border-top:6px solid var(--ink);padding-top:16px;counter-increment:s}
+.step::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:3rem;color:var(--amber-deep);line-height:1}
+.step h4{margin:10px 0 8px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* Panels */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:var(--white);border:2px solid var(--ink);padding:32px}
+.panel h3{font-size:2.2rem;margin-bottom:12px}
+@media (max-width:800px){.panels{grid-template-columns:1fr}}
+
+/* Table */
+.table-scroll{overflow-x:auto;border:2px solid var(--ink);background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.95rem}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--ink);color:var(--white);font-weight:700}
+td:first-child{font-weight:700}
+.note{color:var(--muted);font-size:.9rem;margin-top:14px}
+
+/* Tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tier{border:2px solid var(--ink);padding:30px;background:var(--white);display:flex;flex-direction:column}
+.tier.feature{background:var(--ink);color:var(--white);border-color:var(--amber);border-width:4px}
+.tier h3{font-size:2.2rem}
+.tier .price{font-family:var(--display);font-weight:900;font-size:2rem;color:var(--amber-deep);margin:10px 0 14px}
+.tier.feature .price{color:var(--amber)}
+.tier ul{padding-left:1.1em;margin:0 0 24px;flex:1}
+.tier li{margin-bottom:6px}
+@media (max-width:900px){.tiers{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq details{border-bottom:2px solid var(--ink);padding:18px 0}
+.faq summary{font-weight:700;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--amber-deep)}
+.faq details[open] summary::after{content:"−"}
+.faq .answer p{margin:12px 0 0}
+
+/* Who */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.who{border-left:5px solid var(--amber);padding:6px 0 6px 18px}
+.who h4{margin-bottom:6px}
+@media (max-width:800px){.who-grid{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--white)}
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.contact .intro{color:#c9ccd4}
+.contact dl{margin:0}
+.contact dt{font-weight:700;color:var(--amber);margin-top:18px}
+.contact dd{margin:4px 0 0}
+@media (max-width:800px){.contact .wrap{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#8d929c;font-size:.88rem;padding:24px 0 32px;border-top:1px solid var(--steel)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">B.U.I.L.D. <span>IT</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="#tracks">Tracks</a>
+      <a href="#trades">Trades</a>
+      <a href="#how">How it works</a>
+      <a href="#licensing">Licensing</a>
+      <a href="#scholarships">Scholarships</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#apply">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Learn it. Earn it. Own it.</h1>
+      <p class="lead">An apprenticeship program in six connected careers: real estate, underwriting, insurance and investments, lending, development and internet technology. Train with people who do the work, get licensed, and build a book of business you own.</p>
+      <div class="ctas">
+        <a class="btn" href="#free">Start learning free</a>
+        <a class="btn ghost" href="#tracks">See the tracks</a>
+      </div>
+    </div>
+    <div class="beams" aria-label="The six tracks">
+      <a class="beam" href="#brokerage"><span class="beam__letter">B</span><span class="beam__text"><span class="beam__name">Brokerage</span><span class="beam__desc">Residential, commercial, rentals, property management</span></span></a>
+      <a class="beam" href="#underwriting"><span class="beam__letter">U</span><span class="beam__text"><span class="beam__name">Underwriting</span><span class="beam__desc">Processing, appraisal, title and closing</span></span></a>
+      <a class="beam" href="#insurance"><span class="beam__letter">I</span><span class="beam__text"><span class="beam__name">Insurance and Investments</span><span class="beam__desc">Property &amp; casualty, life, health, securities</span></span></a>
+      <a class="beam" href="#lending"><span class="beam__letter">L</span><span class="beam__text"><span class="beam__name">Lending</span><span class="beam__desc">Mortgage, commercial, SBA, credit repair</span></span></a>
+      <a class="beam" href="#development"><span class="beam__letter">D</span><span class="beam__text"><span class="beam__name">Development</span><span class="beam__desc">Land, flips, new construction, the trades</span></span></a>
+      <a class="beam" href="#it"><span class="beam__letter">IT</span><span class="beam__text"><span class="beam__name">Internet Technology</span><span class="beam__desc">Social media, lead generation, websites, AI</span></span></a>
+    </div>
+  </div>
+</section>
+<div class="stripe" role="presentation"></div>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>38</b><span>years in the industry</span></div>
+    <div class="fact"><b>400+</b><span>homes rehabbed since 1992</span></div>
+    <div class="fact"><b>1,400+</b><span>first-time homeowners helped</span></div>
+    <div class="fact"><b>6</b><span>connected career tracks</span></div>
+  </div>
+</div>
+
+<section id="tracks">
+  <div class="wrap">
+    <h2>Six tracks, one deal</h2>
+    <p class="intro">Every home sale touches all six. Someone lists it, someone underwrites it, someone insures it, someone lends on it, someone builds or fixes it, and someone brings in the buyer online. Learn one track or stack several.</p>
+
+    <article class="track" id="brokerage">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">B</div>
+        <div>
+          <h3>Brokerage</h3>
+          <p>Real estate sales and management. This is where most people start, because it's the fastest license to earn and every other track feeds deals to it.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Residential sales and listings</li><li>Commercial real estate</li><li>Rentals and property management</li><li>First-time homebuyer programs</li><li>Prospecting and client follow-up</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>NYS real estate salesperson license</li><li>Associate broker and broker license</li><li>Continuing education</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Licensed agent at a partner brokerage</li><li>Team leader or listing specialist</li><li>Property manager</li><li>Your own brokerage</li></ul></div>
+      </div>
+    </article>
+
+    <article class="track" id="underwriting">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">U</div>
+        <div>
+          <h3>Underwriting</h3>
+          <p>The people who decide whether a deal closes. Learn to read a file the way lenders, appraisers and title companies do, and you'll be valuable on every side of the table.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Mortgage underwriting and loan processing</li><li>Appraisal and property valuation</li><li>Title search and closing</li><li>Risk review for commercial files</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>Loan processor training</li><li>NYS appraiser trainee license</li><li>Title and closing training</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Loan processor or junior underwriter</li><li>Appraiser trainee, then licensed appraiser</li><li>Title closer</li></ul></div>
+      </div>
+    </article>
+
+    <article class="track" id="insurance">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">I</div>
+        <div>
+          <h3>Insurance and Investments</h3>
+          <p>Property and casualty, life, health, and the securities side. Every house you sell, every truck on a job site and every small business in our chapters needs coverage, which makes this the most renewable income in the program: you sell a policy once and it pays you every year it stays on the books. We have securities-licensed professionals on the direct team who mentor apprentices through the exams and handle sponsorship.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Homeowners, auto and commercial coverage</li><li>Life and health insurance</li><li>Annuities and retirement products</li><li>Investment products and 529 plans</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>NYS property &amp; casualty license</li><li>NYS life, accident &amp; health license</li><li>SIE exam</li><li>Series 6, Series 7 and Series 63</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Licensed insurance agent</li><li>Registered representative</li><li>Agency producer, then your own agency</li></ul></div>
+      </div>
+    </article>
+
+    <article class="track" id="lending">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">L</div>
+        <div>
+          <h3>Lending</h3>
+          <p>Mortgage, commercial, SBA and private money, plus credit repair. Nothing closes without financing, and the people who arrange it are paid on every deal.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Residential mortgage origination</li><li>Commercial and SBA lending</li><li>Private and hard-money lending</li><li>Credit restoration and mortgage-ready coaching</li><li>Business credit building</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>NMLS mortgage loan originator license</li><li>SBA lending program training</li><li>Commercial lending and broker certificates</li><li>Credit consultant certification and compliance training</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Loan officer at a partner lender</li><li>Commercial and SBA loan broker</li><li>Credit restoration specialist or your own credit practice</li><li>Business capital advisor inside our chapters</li><li>Private lender placing your own or investor capital</li></ul></div>
+      </div>
+      <p class="outcome">Credit repair is the easiest door in this track: low startup cost, and the demand never runs out, because a buyer who gets turned down is a buyer who becomes a client. You'll be trained on the federal and state rules that govern this work, including what you may charge and when, before you take a single client.</p>
+      <p class="outcome" style="margin-top:.8rem">Our founder has funded hundreds of real estate projects as a private lender. This track teaches the deal from the lender's chair, not just the borrower's.</p>
+    </article>
+
+    <article class="track" id="development">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">D</div>
+        <div>
+          <h3>Development</h3>
+          <p>Land, flips, new construction and the construction trades. Contractors across the country can't find enough skilled workers, which means a trade learned now is a career that's waiting for you.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Finding and evaluating land and properties</li><li>Fix-and-flip from purchase to resale</li><li>New construction and project management</li><li>Estimating, permits and scheduling</li><li>Hands-on trade skills</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>Home improvement contractor license</li><li>OSHA 10 and OSHA 30</li><li>EPA lead-safe (RRP) certification</li><li>Trade apprenticeships and certifications</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Skilled tradesperson</li><li>Project manager or site supervisor</li><li>Licensed contractor</li><li>Developer and investor</li></ul></div>
+      </div>
+      <p class="outcome">Our founder is both a licensed real estate broker and a licensed contractor, with more than 400 home rehabilitations since 1992. You'll learn from someone who has done the work on both sides.</p>
+    </article>
+
+    <article class="track" id="it">
+      <div class="track__head">
+        <div class="track__letter" aria-hidden="true">IT</div>
+        <div>
+          <h3>Internet Technology</h3>
+          <p>The skills that bring customers to every other track. Every agent, lender, agency and contractor needs someone who can run their online presence, and most of them will pay for it.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col"><h4>What you'll learn</h4><ul><li>Social media management</li><li>Lead generation and paid ads</li><li>Website building</li><li>AI assistants and automation</li></ul></div>
+        <div class="col"><h4>Credentials</h4><ul><li>Google and Meta platform certifications</li><li>A portfolio of real client work</li></ul></div>
+        <div class="col"><h4>Where it leads</h4><ul><li>Social media manager</li><li>Lead generation specialist</li><li>Web and AI freelancer</li><li>Your own digital agency</li></ul></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="trades" id="trades">
+  <div class="wrap">
+    <h2>Every trade has a seat</h2>
+    <p class="intro">The Development track covers the full range of construction trades. Pick one, or learn enough of several to run a job.</p>
+    <div class="trade-grid">
+      <div class="trade">Carpentry<small>Framing and finish</small></div>
+      <div class="trade">Electrical<small>Residential and commercial</small></div>
+      <div class="trade">Plumbing<small>Supply, drain, fixtures</small></div>
+      <div class="trade">HVAC<small>Heating and cooling</small></div>
+      <div class="trade">Roofing<small>Shingle, flat, repair</small></div>
+      <div class="trade">Masonry<small>Brick, block, stone</small></div>
+      <div class="trade">Concrete<small>Foundations and flatwork</small></div>
+      <div class="trade">Drywall<small>Hang, tape, finish</small></div>
+      <div class="trade">Painting<small>Interior and exterior</small></div>
+      <div class="trade">Flooring<small>Wood, vinyl, carpet</small></div>
+      <div class="trade">Tile<small>Kitchens and baths</small></div>
+      <div class="trade">Windows and doors<small>Install and replace</small></div>
+      <div class="trade">Siding<small>Vinyl, wood, fiber cement</small></div>
+      <div class="trade">Insulation<small>Energy efficiency</small></div>
+      <div class="trade">Landscaping<small>Hardscape and grading</small></div>
+      <div class="trade">Demolition<small>Safe tear-out</small></div>
+      <div class="trade">Welding<small>Structural and repair</small></div>
+      <div class="trade">Heavy equipment<small>Excavation and site work</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="intro">Four steps from your first free lesson to your own book of business.</p>
+    <div class="steps">
+      <div class="step"><h4>Start free</h4><p>Take the free introduction to all six tracks and see which one fits you.</p></div>
+      <div class="step"><h4>Pick your track</h4><p>Choose one track or stack several. Apply for a scholarship if you need one.</p></div>
+      <div class="step"><h4>Train and get licensed</h4><p>Work alongside a mentor, take your courses and pass your exams with support.</p></div>
+      <div class="step"><h4>Build your book</h4><p>Work real deals through our network and grow a client base that belongs to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap panels">
+    <div class="panel">
+      <h3>Mentorship</h3>
+      <p>Every apprentice is paired with a working professional in their track. You'll sit in on real appointments, closings and job sites, not just classrooms.</p>
+    </div>
+    <div class="panel">
+      <h3>Incubator</h3>
+      <p>When you're ready to open your own brokerage, agency, credit practice or contracting business, we help with the setup, the first clients and introductions across the National Small Business Chamber of Commerce network.</p>
+    </div>
+  </div>
+</section>
+
+<section id="licensing" style="padding-top:0">
+  <div class="wrap">
+    <h2>Licenses and certifications</h2>
+    <p class="intro">What each credential lets you do and what it takes to earn it.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Credential</th><th>Track</th><th>What it lets you do</th><th>What it takes</th></tr></thead>
+        <tbody>
+          <tr><td>Real estate salesperson</td><td>Brokerage</td><td>Help clients buy, sell and rent property under a broker</td><td>State pre-licensing course and exam, sponsoring broker</td></tr>
+          <tr><td>Real estate broker</td><td>Brokerage</td><td>Run your own brokerage and supervise agents</td><td>Experience as a salesperson, broker course and exam</td></tr>
+          <tr><td>Appraiser trainee</td><td>Underwriting</td><td>Appraise property under a certified appraiser</td><td>Qualifying education and a supervising appraiser</td></tr>
+          <tr><td>Property &amp; casualty</td><td>Insurance</td><td>Sell home, auto and business coverage</td><td>State pre-licensing course and exam</td></tr>
+          <tr><td>Life, accident &amp; health</td><td>Insurance</td><td>Sell life and health insurance and annuities</td><td>State pre-licensing course and exam</td></tr>
+          <tr><td>Securities Industry Essentials (SIE)</td><td>Insurance</td><td>Entry-level securities credential and the prerequisite for registration</td><td>Self-study and exam, no sponsoring firm required to sit</td></tr>
+          <tr><td>Series 6 / Series 7</td><td>Insurance</td><td>Sell mutual funds and variable products, or a full range of securities</td><td>SIE plus the exam, with sponsorship and registration through a firm</td></tr>
+          <tr><td>Series 63</td><td>Insurance</td><td>Register to do securities business at the state level</td><td>Exam alongside your Series 6 or 7 registration</td></tr>
+          <tr><td>Mortgage loan originator (NMLS)</td><td>Lending</td><td>Originate residential mortgages</td><td>Federal pre-licensing hours, state requirements, national exam</td></tr>
+          <tr><td>Credit consultant certification</td><td>Lending</td><td>Work with consumers on credit restoration and mortgage readiness</td><td>Certification course plus federal and state compliance training</td></tr>
+          <tr><td>Home improvement contractor</td><td>Development</td><td>Contract for home improvement work</td><td>County license application and insurance</td></tr>
+          <tr><td>OSHA 10 / OSHA 30</td><td>Development</td><td>Show job-site safety training employers ask for</td><td>10- or 30-hour safety course</td></tr>
+          <tr><td>EPA lead-safe (RRP)</td><td>Development</td><td>Work on pre-1978 homes with painted surfaces</td><td>One-day certification course</td></tr>
+          <tr><td>Google and Meta certifications</td><td>Internet Technology</td><td>Show clients you can run ads and analytics</td><td>Online courses and exams</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Requirements change. We confirm current state and federal requirements with every apprentice before enrollment.</p>
+  </div>
+</section>
+
+<section id="scholarships" style="padding-top:0">
+  <div class="wrap">
+    <h2 id="free">Scholarships and enrollment</h2>
+    <p class="intro">Money should not be the reason you don't start. Everyone can begin free.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Free start</h3>
+        <div class="price">$0</div>
+        <ul><li>Introduction to all six tracks</li><li>Live info sessions</li><li>Career fit conversation</li></ul>
+        <a class="btn" href="#apply">Start learning free</a>
+      </div>
+      <div class="tier feature">
+        <h3>Scholarship</h3>
+        <div class="price">Reduced or covered</div>
+        <ul><li>Full track training</li><li>Mentor pairing</li><li>Help with course and exam fees</li><li>For applicants who qualify</li></ul>
+        <a class="btn" href="#apply">Apply for a scholarship</a>
+      </div>
+      <div class="tier">
+        <h3>Full program</h3>
+        <div class="price">Ask about tuition</div>
+        <ul><li>Full track training</li><li>Mentor pairing</li><li>Incubator support</li><li>Stack multiple tracks</li></ul>
+        <a class="btn" href="#apply">Apply now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <p class="intro">What people ask before they apply.</p>
+    <details><summary>Do I need experience?</summary><div class="answer"><p>No. The free start is built for people who are new to all six industries. Your mentor meets you where you are.</p></div></details>
+    <details><summary>Is this a paid job?</summary><div class="answer"><p>This is a training and mentorship program, not an hourly job. Once you're licensed, you earn from the deals and clients you work, and the book of business you build is yours.</p></div></details>
+    <details><summary>Can I do more than one track?</summary><div class="answer"><p>Yes. Many apprentices start in Brokerage or Insurance and add Lending or Development later. The tracks are designed to work together.</p></div></details>
+    <details><summary>Does the program cover securities or investments?</summary><div class="answer"><p>Yes, on the Insurance and Investments track. Insurance is licensed by the state and securities is regulated by FINRA, so they're two separate paths. You can sit for the SIE exam on your own, and the registration exams after it require a sponsoring firm. We have securities-licensed professionals on the direct team who mentor apprentices through the exams and handle that sponsorship side. Most people license in insurance first and add securities once they have a book of clients.</p></div></details>
+    <details><summary>Is credit repair included?</summary><div class="answer"><p>Yes, as part of the Lending track. You'll learn credit restoration, mortgage-ready coaching and business credit building, and you'll be trained on the compliance rules before working with clients.</p></div></details>
+    <details><summary>How do scholarships work?</summary><div class="answer"><p>Apply through the form below and tell us about your goals. Scholarships can reduce or cover training and help with course and exam fees for applicants who qualify.</p></div></details>
+    <details><summary>Where are classes held?</summary><div class="answer"><p>Our office is in Melville, New York, with training on job sites, at closings and online.</p></div></details>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Who it's for</h2>
+    <p class="intro">If you want a career you can own, there's a track for you.</p>
+    <div class="who-grid">
+      <div class="who"><h4>Career changers</h4><p>You're ready for work where effort shows up in your income.</p></div>
+      <div class="who"><h4>Young adults</h4><p>You want a license and a skill instead of debt.</p></div>
+      <div class="who"><h4>Tradespeople</h4><p>You already know the work and want to run jobs or build your own business.</p></div>
+      <div class="who"><h4>Licensed professionals</h4><p>You want to add a second license and serve your clients on more of the deal.</p></div>
+      <div class="who"><h4>Small business owners</h4><p>You want to learn lending, insurance or marketing for your own company.</p></div>
+      <div class="who"><h4>Future investors</h4><p>You want to understand every side of a real estate deal before you put money in.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="stripe" role="presentation"></div>
+<section class="contact" id="apply">
+  <div class="wrap">
+    <div>
+      <h2>Apply or ask a question</h2>
+      <p class="intro">Tell us which track interests you and we'll set up a call. There's no cost to apply.</p>
+      <div class="ctas" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn" href="mailto:todd@thebambam.com?subject=B.U.I.L.D.%20IT%20application">Email to apply</a>
+        <a class="btn ghost" href="tel:+15167103374">Call 516-710-3374</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Office</dt><dd>555 Broadhollow Road #327<br>Melville, NY 11747</dd>
+      <dt>Phone</dt><dd><a href="tel:+15167103374">516-710-3374</a></dd>
+      <dt>Email</dt><dd><a href="mailto:todd@thebambam.com">todd@thebambam.com</a></dd>
+    </dl>
+  </div>
+</section>
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> B.U.I.L.D. IT Apprenticeship Program. Melville, New York.</div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.menu-toggle'),n=document.getElementById('nav');
+  t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false')})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
